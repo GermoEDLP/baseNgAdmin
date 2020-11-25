@@ -1,18 +1,24 @@
+//Modulos de Angular
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+//Modulos propios
+import { PagesModule } from './pages/pages.module';
+import { AdminModule } from './admin/admin.module';
+
+//Modulos externos
+
+//Componentes
 import { AppComponent } from './app.component';
 
+//Otros
+import { AppRoutingModule } from './app-routing.module';
+import { ErrorComponent } from './system/error/error.component';
+
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, ErrorComponent],
+  imports: [BrowserModule, AppRoutingModule, PagesModule, AdminModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
